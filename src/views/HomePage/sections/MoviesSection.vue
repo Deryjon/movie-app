@@ -1,7 +1,7 @@
 <template>
     <section class="trending mt-[37px] w-[907px]">
         <div class="wrapper flex justify-between gap-[20px] flex-wrap mt-[27px]">
-            <div class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in movieData" :key="movie.id">
+            <div class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in movieData" @click="goSingle(movie.id)" :key="movie.id">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`" alt=""
                     class="rounded-[20px] w-full h-full object-cover">
                 <div class="play rating  flex justify-between items-center absolute top-0 right-2
@@ -18,8 +18,10 @@
 import axios from 'axios';
 import { ref, watchEffect } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
-const store = useStore();
+const router = useRouter();
+
 const movieData = ref([]);
 const limitedMovieData = ref([]);
 
@@ -30,6 +32,9 @@ const fetchData = async () => {
             movie.vote_average = parseFloat(movie.vote_average).toFixed(1);
         });
     
+}
+function goSingle(movieId) {
+    router.push({ name: 'single', params: { id: movieId }});
 }
 
 watchEffect(() => {
