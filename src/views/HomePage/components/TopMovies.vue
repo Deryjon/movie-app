@@ -7,8 +7,9 @@
             <p class="text-[#666666] text-[15px] font-semibold" @click="showAll = !showAll">See all</p>
         </div>
         <div class="wrapper flex justify-between gap-[20px] flex-wrap mt-[27px]">
-            <div v-if="showAll" class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in movieData" :key="movie.id">
-                <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`" alt=""
+            <div v-if="showAll" class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in movieData"
+                :key="movie.id">
+                <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`" @click="goSingle(movie.id)" alt=""
                     class="rounded-[20px] w-full h-full object-cover">
                 <div class="play rating  flex justify-between items-center absolute top-0 right-2
                          text-white font-medium rounded-r-[20px] rounded-bl-[20px]">
@@ -16,7 +17,8 @@
                     {{ movie.vote_average }}
                 </div>
             </div>
-            <div v-else class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in limitedMovieData" :key="movie.id">
+            <div v-else class="card w-[200px] h-[315px] rounded-[20px] relative" @click="goSingle(movie.id)" v-for="movie in limitedMovieData"
+                :key="movie.id">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`" alt=""
                     class="rounded-[20px] w-full h-full object-cover">
                 <div class="play rating  flex justify-between items-center absolute top-0 right-2
@@ -33,6 +35,10 @@
 import axios from 'axios';
 import { ref, watchEffect } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
 
 const store = useStore();
 const movieData = ref([]);
@@ -50,6 +56,9 @@ const fetchData = async () => {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
+}
+function goSingle(movieId) {
+    router.push({ name: 'single', params: { id: movieId }});
 }
 
 watchEffect(() => {

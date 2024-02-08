@@ -16,7 +16,7 @@ const router = createRouter({
       import("../views/HomePage/sections/MoviesSection.vue"),
     },
     {
-      path: '/single',
+      path: '/single/:id',
       name: 'single',
     component: () =>
       import("../views/HomePage/sections/SingleFilmSection.vue"),
