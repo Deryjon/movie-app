@@ -4,13 +4,13 @@
         <img src="../../../assets/icons/logo-movie.svg" alt="" class="w-[100%] h-[100%]">
       </div>
       <div class="menu-items mt-[80px] text-[#666666]">
-        <div tag="button" exact class="side-btn  py-[28px] px-[42px] " :class="{ active: isActive('home') }" @click="setActive('home')">
+        <div tag="button" exact class="side-btn  py-[28px] px-[42px] " :class="{ active: isActive('home') }" @click="goHome('home')">
           <div class="link-container font-semibold text-[20px] flex mx-auto gap-[15px]" >
             <img src="../../../assets/icons/Home.svg" alt="">
             <p>Home</p>  
           </div>
         </div>
-        <div tag="button" exact class="side-btn  py-[28px] px-[42px] " :class="{ active: isActive('movie') }" @click="setActive('movie')">
+        <div tag="button" exact class="side-btn  py-[28px] px-[42px] " :class="{ active: isActive('movie') }" @click="goMovie('movie')">
           <div class="link-container font-semibold text-[20px] flex mx-auto gap-[15px]">
             <img src="../../../assets/icons/Movie Projector.svg" alt="">
             <p>Movies</p> 
@@ -40,7 +40,10 @@
   
   <script setup>
   import { ref } from 'vue';
-  
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+
   const activeButton = ref('home');
   
   function isActive(button) {
@@ -49,6 +52,16 @@
   
   function setActive(button) {
     activeButton.value = button;
+  }
+ function goHome(button){
+    router.push({ name: 'home' });
+    activeButton.value = button;
+
+  }
+ function goMovie(button){
+    router.push({ name: 'movies' });
+    activeButton.value = button;
+
   }
   </script>
   

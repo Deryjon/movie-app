@@ -27,6 +27,7 @@
             </div>
             <TrendingMovies />
             <UpcomingMovies/>
+            <TopMovies/>
             <div class="wrapper flex gap-[20px] flex-wrap">
                 <div class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in movieData" :key="movie.id">
                     <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`" alt=""
@@ -49,6 +50,7 @@ import { ref, watchEffect } from 'vue';
 import { useStore } from 'vuex';
 import TrendingMovies from '../components/TrendingMovies.vue';
 import UpcomingMovies from '../components/UpcomingMovies.vue';
+import TopMovies from '../components/TopMovies.vue';
 
 const store = useStore();
 const movieData = ref([]);
