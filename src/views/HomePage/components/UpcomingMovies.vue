@@ -3,7 +3,7 @@
 
         <div class="wrapper flex justify-between items-center">
 
-            <h2 class="text-[25px] font-semibold text-white ">Trending</h2>
+            <h2 class="text-[25px] font-semibold text-white ">Upcoming</h2>
             <p class="text-[#666666] text-[15px] font-semibold" @click="showAll = !showAll">See all</p>
         </div>
         <div class="wrapper flex justify-between gap-[20px] flex-wrap mt-[27px]">
@@ -41,7 +41,7 @@ const showAll = ref(false);
 
 const fetchData = async () => {
     try {
-        const response = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=02708c4929ad93aa5e68f8ee7bfa4445');
+        const response = await axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=02708c4929ad93aa5e68f8ee7bfa4445');
         movieData.value = response.data.results;
         movieData.value.forEach(movie => {
             movie.vote_average = parseFloat(movie.vote_average).toFixed(1);

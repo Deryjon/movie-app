@@ -9,7 +9,7 @@ const store = createStore({
   mutations: {
     updateSearchQuery(state, query) {
       state.searchQuery = query;
-      console.log(query, state);
+      console.log(query, state  );
     }
   }
 });
