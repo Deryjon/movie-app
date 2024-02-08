@@ -4,7 +4,7 @@
             <div class="wrapper flex gap-[38px]">
 
                 <div
-                    class="home-basic w-[909px] h-[300px] flex justify-end items-end   gap-[25px] text-[#E8E8E8] text-[20px] font-semibold bg-green-500 rounded-[23px] py-[20px] px-[15px]">
+                    class="home-basic w-[889px] h-[300px] flex justify-end items-end   gap-[25px] text-[#E8E8E8] text-[20px] font-semibold bg-green-500 rounded-[23px] py-[20px] px-[15px]">
 
                     <button class="play h-[55px] px-[25px] rounded-[15px] flex items-center gap-[2px]">
                         <img src="../../../assets/icons/Play.svg" alt="">
