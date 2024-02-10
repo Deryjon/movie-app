@@ -11,7 +11,7 @@ import Avatar from './views/HomePage/components/Avatar-Img.vue';
 <SideBar />
 <div class="">
 
-    <div class="flex gap-x-[145px] items-center mt-[45px]">
+    <div class="flex gap-[30px] lg:gap-x-[145px] items-center mt-[45px]">
 
         <Search />
         <div class=" flex gap-[25px]">

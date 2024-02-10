@@ -1,12 +1,12 @@
 <template>
-    <section class="trending mt-[37px] w-[907px]">
+    <section class="trending mt-[37px] w-[200px]  lg:w-[907px]">
 
         <div class="wrapper flex justify-between items-center">
 
             <h2 class="text-[25px] font-semibold text-white ">Trending</h2>
             <p class="text-[#666666] text-[15px] font-semibold" @click="showAll = !showAll">See all</p>
         </div>
-        <div class="wrapper flex justify-between gap-[20px] flex-wrap mt-[27px]">
+        <div class="wrapper flex  justify-between gap-[20px] flex-wrap mt-[27px]">
             <div v-if="showAll" class="card w-[200px] h-[315px] rounded-[20px] relative" v-for="movie in movieData" :key="movie.id">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`" @click="goSingle(movie.id)" alt=""
                     class="rounded-[20px] w-full h-full object-cover">

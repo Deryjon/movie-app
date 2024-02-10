@@ -1,5 +1,5 @@
 <template>
-    <section class="trending mt-[37px] w-[907px]">
+    <section class="trending mt-[37px] w-[200px] lg:w-[907px]">
 
         <div class="wrapper flex justify-between items-center">
 

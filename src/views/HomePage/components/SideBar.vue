@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar bg-[#212121] w-[226px]  rounded-r-[45px] pt-[56px]">
+    <div class="sidebar bg-[#212121] w-[50px] lg:w-[226px]  rounded-r-[45px] pt-[56px]">
       <div class="img h-[42px] w-[118px] mx-auto">
         <img src="../../../assets/icons/logo-movie.svg" alt="" class="w-[100%] h-[100%]">
       </div>

@@ -1,5 +1,5 @@
 <template>
-    <section class="single w-[1100px] text-white">
+    <section class="single lg:w-[1100px] text-white">
         <div v-if="movie">
             <div class="rating flex gap-[5px] items-center mt-[75px]">
 <img src="../../../assets/icons/Star.svg" class="w-[30px] h-[30px]" alt="">
